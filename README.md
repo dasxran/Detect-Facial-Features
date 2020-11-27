@@ -43,7 +43,7 @@ Project uses below python packages:
      ```
  - Run below command to visualize the results
     ```sh
-     python detect_face_features.py --shape-predictor shape_predictor_68_face_landmarks.dat --image images/image_1.jpg
+     python detect_face_features.py
     ```
 
 ##### Author    
