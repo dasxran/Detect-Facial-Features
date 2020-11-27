@@ -58,6 +58,15 @@ def visualize_facial_landmarks(image, shape, colors=None, alpha=0.75):
     # return the output image
     # print(facial_features_cordinates)
     print(facial_features_rgb)
+
+    meanR = meanG = meanB = 0
+    lenRGBS = len(facial_features_rgb['Mouth'])
+    for eachRGB in facial_features_rgb['Mouth']:
+        meanR += eachRGB[0]
+        meanG += eachRGB[1]
+        meanB += eachRGB[2]
+    print('Agerage: ',[meanR//lenRGBS, meanG//lenRGBS, meanB//lenRGBS])
+
     return output
 
 
@@ -69,7 +78,7 @@ predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
 # load the input image, resize it, and convert it to grayscale
 # image = cv2.imread(args["image"])
-image = cv2.imread("images/Pic2.jpg")
+image = cv2.imread("images/Pic6.jpg")
 image = imutils.resize(image, width=500)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
